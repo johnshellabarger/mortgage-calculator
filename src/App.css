@@ -1,38 +1,97 @@
-.App {
+
+.cal-card {
+  padding: 0 20px 20px;
+  background: rgb(255, 255, 255);
+  border: .5px solid grey;
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: 50px;
+  width: 55%;
+}
+
+.cal-header {
+  margin: 0;
+  padding: 15px 0;
+  color: #404245;
+  line-height: 31px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+  box-sizing: border-box;
+}
+
+.form-list {
+  border-top: 1px solid #e6e6e6;
+  margin: 0;
+  padding: 2px 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-list label {
+  display: flex;
+  position: relative;
+  margin-top: 15px;
+  width: 250px;
+}
+
+
+.form-list label span b {
+  height: 25px;
+  width: 25px;
+  background-color: #0091ff;
+  color: white;
+  border-radius: 50%;
+  display: inline-block;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-list label .cal-input {
+  font-size: 12px;
+  line-height: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cal-input {
+  display: block;
+  width: 220px;
+  margin-left: calc(100% - 220px);
+  margin-top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.form-list input {
+  border: 1px solid #d1d7db;
+  height: 34px;
+  width: 200px;
+  border-radius: 2px;
+  padding: 0 10px;
+  background: #fff;
+  vertical-align: middle;
+  margin: 10px 0;
+}
+
+.cal-button-container{
+  margin: auto;
+  text-align: center;
+}
+
+.cal-button-container button {
+  margin-top: 20px;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: #3ddb93;
+  width: 200px;
+  border: none;
+  border-radius: 2px;
+  line-height: 40px;
+  font-weight: 400;
+  text-align: center;
+  font-size: 14px;
+  padding: 0 15px;
 }
