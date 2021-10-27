@@ -1,11 +1,11 @@
 import React from 'react'
 
 
-const AmortizationCalculator = ({ handleForm }) => {
+const AmortizationCalculator = ({ handleForm, handleFormInput }) => {
   return (
     <section className='cal-card'>
       <header>
-        <h1 className='cal-header'>Amortization Calculator</h1>
+        <h2 className='cal-header'>Amortization Calculator</h2>
       </header>
       <form onSubmit={(e) => handleForm(e)}>
         <div className='form-list'>
@@ -17,7 +17,12 @@ const AmortizationCalculator = ({ handleForm }) => {
           </label>
           <div className='text-input'>
             <div>
-              <input type='text'/>
+              <input 
+                type='text'
+                name='loanAmount'
+                placeholder='0.00'
+                onChange={handleFormInput}
+              />
             </div>
           </div>
         </div>
@@ -31,7 +36,12 @@ const AmortizationCalculator = ({ handleForm }) => {
           </label>
           <div className='text-input'>
             <div>
-              <input type='text'/>
+              <input
+                type='text'
+                name='interestRate'
+                placeholder='0.00'
+                onChange={handleFormInput}
+              />
             </div>
           </div>
         </div>
@@ -45,7 +55,12 @@ const AmortizationCalculator = ({ handleForm }) => {
           </label>
           <div className='text-input'>
             <div>
-              <input type='text'/>
+              <input 
+                type='text'
+                name='downPayment'
+                placeholder='0.00'
+                onChange={handleFormInput}
+              />
             </div>
           </div>
         </div>
@@ -59,7 +74,12 @@ const AmortizationCalculator = ({ handleForm }) => {
           </label>
           <div className='text-input'>
             <div>
-              <input type='text'/>
+              <input
+                type='text'
+                name='years'
+                placeholder='0'
+                onChange={handleFormInput}
+              />
             </div>
           </div>
         </div>

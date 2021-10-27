@@ -9,7 +9,18 @@
   box-sizing: border-box;
   margin: auto;
   margin-top: 50px;
-  width: 55%;
+  width: 70%;
+  color: #404245;
+}
+
+
+.schedule{
+  max-height: 600px;
+  overflow: scroll;
+}
+
+.schedule-row {
+  border-top: .2px solid grey;
 }
 
 .cal-header {
@@ -19,6 +30,15 @@
   line-height: 31px;
   font-size: 24px;
   font-weight: 300;
+}
+
+.cal-subheader {
+  margin: 0;
+  padding: 20px 0;
+  color: #404245;
+  font-weight: 300;
+  font-size: 1.17em;
+
 }
 
 form {
@@ -94,4 +114,30 @@ form {
   text-align: center;
   font-size: 14px;
   padding: 0 15px;
+}
+
+.loan-amount-data{
+  color: #3ddb93;
+}
+
+
+.cal-table {
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 3px 0;
+  text-align: center;
+}
+
+.cal-table th {
+  padding: 30px;
+  color: #404245;
+  line-height: 17px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.cal-table td {
+  padding-bottom: 30px;
 }
