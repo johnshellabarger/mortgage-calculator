@@ -1,10 +1,8 @@
 import React from 'react'
 
-const AmortizationSchedule = ({ monthlyPayment, years }) => {
-  
+const AmortizationSchedule = ({  years, object }) => {
   
   let yearsArray = []
-
 
   for(let i = 0; i <= (years * 12); i++){
     yearsArray.push(i)
@@ -19,23 +17,24 @@ const AmortizationSchedule = ({ monthlyPayment, years }) => {
       <table className='cal-table'>
         <thead>
           <tr>
-            <th>Month/Year</th>
+            <th>Month</th>
             <th>Payment Amount</th>
             <th>Interest Paid</th>
             <th>Principle Paid</th>
             <th>Mortgage Balance</th>
           </tr>
         </thead>
+        
 
-        {yearsArray.map(year => {
+        {object?.map(month => {
           return (
-            <tbody>
+            <tbody key={month.month}>
             <tr className='schedule-row'>
-              <td>1</td>
-              <td>{monthlyPayment}</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
+              <td>{month.month}</td>
+              <td>${month.payment}</td>
+              <td>${month.interestPaid}</td>
+              <td>${month.principlePaid}</td>
+              <td>${month.balance}</td>
             </tr>
           </tbody>
           )

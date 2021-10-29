@@ -2,11 +2,11 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 
 
-const LoanAmortizationChart = ( { chartData } ) => {
+const LoanAmortizationChartTwo = ( { chartData } ) => {
 
   return (
     <div>
-       <h1 className='cal-subheader'>Loan Amortization Chart</h1>
+      <h1 className='cal-subheader'>Principle Payment Chart</h1>
       <Line 
         data={
           chartData
@@ -16,4 +16,4 @@ const LoanAmortizationChart = ( { chartData } ) => {
   )
 }
 
-export default LoanAmortizationChart
+export default LoanAmortizationChartTwo

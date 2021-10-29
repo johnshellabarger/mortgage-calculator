@@ -1,7 +1,8 @@
 import React from 'react'
 import LoanAmortizationChart from './LoanAmortizationChart'
+import LoanAmortizationChartTwo from './LoanAmortizationChartTwo'
 
-const AmortizationSummary = ({ monthlyPayment, numberOfPayments, totalPayments, originalLoanAmount, years}) => {
+const AmortizationSummary = ({ monthlyPayment, numberOfPayments, totalPayments, loanAmount, years, chartData, chartDataTwo}) => {
   return (
     <section className='cal-card'>
       <div>
@@ -21,7 +22,7 @@ const AmortizationSummary = ({ monthlyPayment, numberOfPayments, totalPayments, 
               <td>${monthlyPayment}</td>
               <td>{numberOfPayments}</td>
               <td>${totalPayments}</td>
-              <td className='loan-amount-data'>${originalLoanAmount}</td>
+              <td className='loan-amount-data'>${loanAmount}</td>
             </tr>
           </tbody>
         </table>
@@ -30,7 +31,12 @@ const AmortizationSummary = ({ monthlyPayment, numberOfPayments, totalPayments, 
 
         <LoanAmortizationChart
             years={years}
+            chartData={chartData}
           />
+
+        <LoanAmortizationChartTwo 
+          chartData={chartDataTwo}
+        />
       </div>
     </section>
   )
