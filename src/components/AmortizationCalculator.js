@@ -17,6 +17,7 @@ const AmortizationCalculator = ({ handleForm, handleFormInput }) => {
           </label>
           <div className='text-input'>
             <div>
+              $
               <input 
                 type='text'
                 name='loanAmount'
@@ -36,12 +37,14 @@ const AmortizationCalculator = ({ handleForm, handleFormInput }) => {
           </label>
           <div className='text-input'>
             <div>
+              
               <input
                 type='text'
                 name='interestRate'
                 placeholder='0.00'
                 onChange={handleFormInput}
               />
+
             </div>
           </div>
         </div>
@@ -50,25 +53,6 @@ const AmortizationCalculator = ({ handleForm, handleFormInput }) => {
           <label>
             <span>
               <b>3</b>
-            </span>
-            <div className='cal-input'>Down Payment</div>
-          </label>
-          <div className='text-input'>
-            <div>
-              <input 
-                type='text'
-                name='downPayment'
-                placeholder='0.00'
-                onChange={handleFormInput}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className='form-list'>
-          <label>
-            <span>
-              <b>4</b>
             </span>
             <div className='cal-input'>Number of Years</div>
           </label>

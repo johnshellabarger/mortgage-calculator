@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AmortizationSchedule = ({  years, object }) => {
+const AmortizationSchedule = ({  years, paymentData }) => {
   
   let yearsArray = []
 
@@ -26,7 +26,7 @@ const AmortizationSchedule = ({  years, object }) => {
         </thead>
         
 
-        {object?.map(month => {
+        {paymentData?.map(month => {
           return (
             <tbody key={month.month}>
             <tr className='schedule-row'>

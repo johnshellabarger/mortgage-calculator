@@ -9,7 +9,7 @@
   box-sizing: border-box;
   margin: auto;
   margin-top: 50px;
-  width: 70%;
+  width: 60%;
   color: #404245;
 }
 
@@ -17,6 +17,7 @@
 .schedule{
   max-height: 600px;
   overflow: scroll;
+  margin-bottom: 50px;
 }
 
 .schedule-row {
