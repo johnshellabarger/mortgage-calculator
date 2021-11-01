@@ -5,8 +5,8 @@ import { Line } from 'react-chartjs-2'
 const LoanAmortizationChartTwo = ( { principlePaymentChartData } ) => {
 
   return (
-    <div>
-      <h1 className='cal-subheader'>Principle Payment Chart</h1>
+    <div className='chart-container'>
+      <h1 className='cal-subheader-two'>Principle Payment Chart</h1>
       <Line 
         data={
           principlePaymentChartData

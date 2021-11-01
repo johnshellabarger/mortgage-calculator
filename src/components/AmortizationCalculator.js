@@ -1,7 +1,8 @@
 import React from 'react'
 
 
-const AmortizationCalculator = ({ handleForm, handleFormInput }) => {
+
+const AmortizationCalculator = ({ handleForm, handleFormInput, errors }) => {
   return (
     <section className='cal-card'>
       <header>
@@ -17,11 +18,10 @@ const AmortizationCalculator = ({ handleForm, handleFormInput }) => {
           </label>
           <div className='text-input'>
             <div>
-              $
               <input 
                 type='text'
                 name='loanAmount'
-                placeholder='0.00'
+                placeholder='0'
                 onChange={handleFormInput}
               />
             </div>
@@ -36,15 +36,13 @@ const AmortizationCalculator = ({ handleForm, handleFormInput }) => {
             <div className='cal-input'>Interest Rate</div>
           </label>
           <div className='text-input'>
-            <div>
-              
+            <div className='input-container'>
               <input
                 type='text'
                 name='interestRate'
-                placeholder='0.00'
+                placeholder='0'
                 onChange={handleFormInput}
               />
-
             </div>
           </div>
         </div>
@@ -73,6 +71,9 @@ const AmortizationCalculator = ({ handleForm, handleFormInput }) => {
         </div>
 
       </form>
+
+      {errors !== '' ? (<p className='errors'>{errors}</p>) : (null)}
+
     </section>
   )
 }

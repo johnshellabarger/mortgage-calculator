@@ -30,11 +30,11 @@ const AmortizationSchedule = ({  years, paymentData }) => {
           return (
             <tbody key={month.month}>
             <tr className='schedule-row'>
-              <td>{month.month}</td>
-              <td>${month.payment}</td>
-              <td>${month.interestPaid}</td>
-              <td>${month.principlePaid}</td>
-              <td>${month.balance}</td>
+              <td data-label='Month'>{month.month}</td>
+              <td data-label='Payment Amount'>${Math.round(month.payment.toFixed(2))}</td>
+              <td data-label='Interest Paid'>${Math.round(month.interestPaid.toFixed(2))}</td>
+              <td data-label='Principle Paid'>${Math.round(month.principlePaid.toFixed(2))}</td>
+              <td data-label='Mortgage Balance'>${Math.round(month.balance.toFixed(2))}</td>
             </tr>
           </tbody>
           )

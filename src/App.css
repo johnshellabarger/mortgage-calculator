@@ -1,8 +1,16 @@
+.errors {
+  color: red;
+}
+
+.amortization-summary{
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+}
 
 .cal-card {
   padding: 0 20px 20px;
   background: rgb(255, 255, 255);
-  border: .5px solid grey;
   border-radius: 2px;
   position: relative;
   display: block;
@@ -39,7 +47,11 @@
   color: #404245;
   font-weight: 300;
   font-size: 1.17em;
+}
 
+.cal-subheader-two {
+  font-weight: 200;
+  font-size: 1em;
 }
 
 form {
@@ -78,7 +90,9 @@ form {
 .form-list label .cal-input {
   font-size: 12px;
   line-height: 25px;
+  background-color: white;
 }
+
 
 .cal-input {
   display: block;
@@ -96,6 +110,15 @@ form {
   background: #fff;
   vertical-align: middle;
   margin: 10px 0;
+}
+
+
+.fa {
+  padding: 10px;
+  background: dodgerblue;
+  color: rgb(194, 18, 18);
+  min-width: 50px;
+  text-align: center;
 }
 
 .cal-button-container{
@@ -141,4 +164,122 @@ form {
 
 .cal-table td {
   padding-bottom: 30px;
+}
+
+.chart-container {
+  width: 80%;
+  margin:auto;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+
+
+@media only screen and (max-width: 1100px)  {
+  .cal-card {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 800px)  {
+  .cal-card {
+    width: 80%;
+  }
+}
+
+
+@media only screen and (max-width: 650px)  {
+  .cal-card {
+    width: 100%;
+  }
+
+  .cal-table th {
+    padding: 0px;
+    color: #404245;
+    line-height: 14px;
+    font-size: 11px;
+    font-weight: 200;
+  }
+
+  .cal-table td {
+    padding-bottom: 5px;
+  }
+  
+  .cal-header{
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    color: #404245;
+    line-height: 31px;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  
+  .cal-subheader{
+    text-align: center;
+  }
+
+  .cal-table th {
+    line-height: 12px;
+    font-size: 11px;
+    font-weight: 200;
+  }
+
+  .chart-container {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.cal-input {
+    display: block;
+    width: 150px;
+    margin-left: calc(100% - 220px);
+    margin-top: 0;
+}
+
+.form-list input {
+  width: 100px;
+}
+
+.form-list {
+  justify-content: space-evenly;
+}
+
+.form-list label .cal-input {
+  font-size: 12px;
+  line-height: 25px;
+  margin-left: 5px;
+}
+
+.cal-table base{
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 3px 0;
+}
+
+/* Changes base calculation table to show data labels */
+table thead {
+  display: none;
+}
+
+table td {
+  display: block;
+  float: right;
+  font-size: 13px;
+  text-align: right;
+  border-bottom: 1px dotted #ccc;
+  width: 100%;
+}
+
+table td:before {
+  content: attr(data-label);
+  float: left;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
 }

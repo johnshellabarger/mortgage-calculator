@@ -18,9 +18,8 @@ function App() {
   const [originalLoanAmount, setOriginalLoanAmount] = useState('-')
 
   const [years, setYears] = useState('')
-
   const [paymentData, setPaymentData] = useState([])
-
+  const [errors, setErrors] = useState('')
 
   const handleFormInput = (e) => {
     setFormInput({
@@ -38,20 +37,23 @@ function App() {
 
     if(validatedAmount && validatedInterest && validatedYears){
       calculateValues(formInput.loanAmount, formInput.interestRate, formInput.years)
+      setErrors('')
     }
+
   }
 
   const validateField = (field) => {
-    const int = parseFloat(field)
-    if(field === '' || field === 0 ){
-      return false 
-    } else if (isNaN(int)){
+
+    if(field === '' || field == 0){
+      setErrors('Please Enter a value')
+      return false
+    } else if (isNaN(field)){
+      setErrors('Please Enter a number')
       return false
     } else {
       return true 
     }
   }
-
 
   // calculates base values, creates schedule
   const calculateValues = async ( loanAmount, interestRate, years) => {
@@ -62,7 +64,6 @@ function App() {
     let monthlyPayments = (principle * [monthlyInterest * (1 + monthlyInterest) ** numberOfPayments]) / [ (1 + monthlyInterest) ** numberOfPayments - 1]
  
     let total = monthlyPayments * numberOfPayments
-
 
     setMonthlyPayment(Math.round(monthlyPayments.toFixed(2)))
     setNumberOfPayments(numberOfPayments)
@@ -81,11 +82,11 @@ function App() {
       balance = newAmount
       
       newObject.push({
-        month: i,
-        payment: Math.round(monthlyPayments.toFixed(2)),
-        interestPaid: Math.round(interest.toFixed(2)),
-        principlePaid: Math.round(principlePaid.toFixed(2)),
-        balance: Math.round(balance.toFixed(2))
+        month: i ,
+        payment: monthlyPayments,
+        interestPaid: interest,
+        principlePaid: principlePaid,
+        balance: balance
       })
     }
     setPaymentData(newObject)
@@ -94,8 +95,13 @@ function App() {
 
   // arrays to push in data points 
   let principlePaidData = []
+  let principlePaidDataRounded = []
+
   let interestData = []
+  let interestDataRounded = []
+
   let yearlyBalanceDataPoints = []
+  let balanceDataPointsRounded = []
 
   // labels for second chart
   let labelYears = []
@@ -113,27 +119,38 @@ function App() {
         return true 
   })
 
+  principlePaidData?.map(dataPoint => {
+    principlePaidDataRounded.push(Math.round(dataPoint.toFixed(2)))
+    return true 
+  })
 
+  interestData?.map(dataPoint => {
+    return interestDataRounded.push(Math.round(dataPoint.toFixed(2)))
+
+  })
+
+  yearlyBalanceDataPoints?.map(dataPoint => {
+    return balanceDataPointsRounded.push(Math.round(dataPoint.toFixed(2)))
+  })
+
+  // Splits years into months and adds up the total interest and total principle paid that year.  
   let copyOfPaymentData = paymentData?.slice()
 
   let counterOne = paymentData.length
   let counterTwo = paymentData.length
-  
-  
-  // annualPrinciplePaidTotal 
-  
-  
 
   let principlePaymentData = []
   let yearlyPrinciplePaymentData = []
   let annualPrinciplePaidTotal = []
   let yearlyPrinciplePaidDataPoints = []
+  let principleDataPointsRounded = []
 
   let interestPaymentData = []
   let yearlyInterestPaymentData = []
   let annualInterestPaidTotal = []
   let yearlyInterestPaidDataPoints = []
-
+  let interestDataPointsRounded = []
+  
 
   copyOfPaymentData.map(year => principlePaymentData.push(year.principlePaid))
   copyOfPaymentData.map(year => interestPaymentData.push(year.interestPaid))
@@ -145,7 +162,7 @@ function App() {
   }
 
   yearlyPrinciplePaymentData.map(year => {
-    annualPrinciplePaidTotal.push(year.reduce((a,b) => a+b))
+    return annualPrinciplePaidTotal.push(year.reduce((a,b) => a+b))
   })
 
   let yearlyTotalPrinciplePaid = 0
@@ -161,7 +178,7 @@ function App() {
   }
 
   yearlyInterestPaymentData.map(year => {
-    annualInterestPaidTotal.push(year.reduce((a,b) => a+b))
+    return annualInterestPaidTotal.push(year.reduce((a,b) => a+b))
   })
 
   let yearlyTotalInterestPaid = 0
@@ -170,9 +187,14 @@ function App() {
     yearlyInterestPaidDataPoints.push(yearlyTotalInterestPaid)
   }
 
+  // Round up Data point numbers
+  yearlyPrinciplePaidDataPoints?.map(dataPoint => {
+    return principleDataPointsRounded.push(Math.round(dataPoint.toFixed(2)))
+  })
 
-
-
+  yearlyInterestPaidDataPoints?.map(dataPoint => {
+    return interestDataPointsRounded.push(Math.round(dataPoint.toFixed(2)))
+  })
 
   //data points
   const loanAmortizationChartData = {
@@ -180,26 +202,29 @@ function App() {
     datasets:[
       {
         label:'Balance',
-        data: yearlyBalanceDataPoints,
+        data: balanceDataPointsRounded,
         backgroundColor: 'rgba(61, 219, 147, 1)',
         borderColor: 'rgba(61, 219, 147, 1)',
         pointBorderColor: 'rgba(255, 255, 255, 1)'
       },
       {
         label:'Principle',
-        data: yearlyPrinciplePaidDataPoints,
+        data: principleDataPointsRounded,
         backgroundColor: 'rgb(0, 145, 255)',
         borderColor: '  rgb(0, 145, 255)',
         pointBorderColor: 'rgba(255, 255, 255, 1)'
       },
       {
         label:'Interest',
-        data: yearlyInterestPaidDataPoints,
+        data: interestDataPointsRounded,
         backgroundColor: 'rgb(0, 70, 147)',
         borderColor: 'rgb(0, 70, 147)',
         pointBorderColor: 'rgba(255, 255, 255, 1)'
       }
-    ]
+    ],
+    options: {
+      maintainAspectRatio: false
+    }
   }
 
   const principlePaymentChartData = {
@@ -211,24 +236,39 @@ function App() {
         fill: true,
         backgroundColor: 'rgb(0, 70, 147, .5)',
         borderColor: 'rgb(0, 70, 147,)',
-        data: interestData
+        data: interestDataRounded
       },
       {
         label:'Principle',
         fill: true,
         backgroundColor: 'rgb(0, 145, 255, .5)',
         borderColor: 'rgb(0, 145, 255)',
-        data: principlePaidData
+        data: principlePaidDataRounded
       }
-    ]
+    ],
+    options: {
+      maintainAspectRatio: false
+    }
   }
 
 
   return (
     <div className="App">
+
+      <p className='amortization-summary'>Amortization is the gradual reduction of a debt over a given period. 
+        My amortization calculator will amortize (show the reduction) your debt
+        (such as a mortgage) and display your payment breakdown of interest paid,
+        principal paid and loan balance over the life of the loan. It comes as a 
+        surprise to some that most of your initial payments on a loan are used to
+        pay interest. For example, in a 30-year mortgage over 83% of your payments
+        are used to pay down interest in the first year, while only 3% of your payments
+        are used to pay down interest in the final year. This is the primary reason why
+        little equity is built in the first few years of a mortgage.</p>
+
       <AmortizationCalculator
         handleFormInput={handleFormInput}
         handleForm={handleForm}
+        errors={errors}
       />
       <AmortizationSummary 
         monthlyPayment={monthlyPayment}
