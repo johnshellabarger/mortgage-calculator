@@ -37,8 +37,9 @@ To get a local copy up and running follow these steps, or view the project here:
 
 ### Landing Page
 You will be greated with a screen to input your loan amount, interest rate, and number of years to payback the loan. Once you enter this information in and hit calculate, the charts and schedule will be populated with the corisponding information.  
+
 <p align='center'>
-  <img width='75%' src="https://user-images.githubusercontent.com/22285810/139924506-5d7660de-284f-474d-9011-f1fe159f8242.gif"/>
+  <img width='75%' src="https://user-images.githubusercontent.com/22285810/139925092-d1c2cd0a-c301-4550-8630-968d5366acfd.gif"/>
 </p>
 
 
