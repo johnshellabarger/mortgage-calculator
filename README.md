@@ -1,7 +1,7 @@
 <p align="center">
   <h3 align="center">Welcome to my Amortization Calculator</h3>
   <p align="center">
-    An app that tests users trivia skills!
+    An app that show the reduction of debt and display the payment breakdown of interest paid, principal paid and loan balance over the life of the loan.
     <br />
     <br />
   </p>
@@ -10,7 +10,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Do you love testing your random knowledge against others?! Trivial is trivia game that tests users knowledge with randomly generated questions from different categories. 
+Amortization is the gradual reduction of a debt over a given period. My amortization calculator will amortize your debt and display your payment breakdown.
 
 ### Built With
 
@@ -19,7 +19,7 @@ Do you love testing your random knowledge against others?! Trivial is trivia gam
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these steps.
+To get a local copy up and running follow these steps, or view the project here: https://amortization-calculator.herokuapp.com/
 
 ### Installation
 
@@ -36,9 +36,9 @@ To get a local copy up and running follow these steps.
 ## Usage
 
 ### Landing Page
-You will be greated with a screen asking you to start a new game, or take a look at the current scores. 
+You will be greated with a screen to input your loan amount, interest rate, and number of years to payback the loan. Once you enter this information in and hit calculate, the charts and schedule will be populated with the corisponding information.  
 <p align='center'>
-  <img width='75%' src="https://user-images.githubusercontent.com/22285810/135129443-e3bc78e7-60d9-47e9-9437-48aab9c7ede3.gif"/>
+  <img width='75%' src="https://user-images.githubusercontent.com/22285810/139924506-5d7660de-284f-474d-9011-f1fe159f8242.gif"/>
 </p>
 
 
