@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+<p align="center">
+  <h3 align="center">Welcome to my Amortization Calculator</h3>
+  <p align="center">
+    An app that show the reduction of debt and display the payment breakdown of interest paid, principal paid and loan balance over the life of the loan.
+    <br />
+    <br />
+  </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-In the project directory, you can run:
+Amortization is the gradual reduction of a debt over a given period. My amortization calculator will amortize your debt and display your payment breakdown.
 
-### `yarn start`
+### Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Built with React, Chart.js, CSS.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- GETTING STARTED -->
+## Getting Started
 
-### `yarn test`
+To get a local copy up and running follow these steps, or view the project here: https://amortization-calculator.herokuapp.com/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `yarn build`
+1. Clone the repo
+   ```sh
+   git clone https://github.com/johnshellabarger/phase-1-project.git
+   ```
+2. Start the App
+   ```sh
+   npm or yarn start 
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- USAGE EXAMPLES -->
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Landing Page
+You will be greated with a screen to input your loan amount, interest rate, and number of years to payback the loan. Once you enter this information in and hit calculate, the charts and schedule will be populated with the corisponding information.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align='center'>
+  <img width='75%' src="https://user-images.githubusercontent.com/22285810/139925092-d1c2cd0a-c301-4550-8630-968d5366acfd.gif"/>
+</p>
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- Contact -->
+## Contact
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+John Shellabarger - [GitHub](https://github.com/johnshellabarger) | [LinkedIn](https://www.linkedin.com/in/johnshellabarger/) | [Email](johnwilliamshellabarger@gmail.com)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
