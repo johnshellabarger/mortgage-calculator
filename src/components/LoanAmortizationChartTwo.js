@@ -6,7 +6,7 @@ const LoanAmortizationChartTwo = ( { principlePaymentChartData } ) => {
 
   return (
     <div className='chart-container'>
-      <h1 className='cal-subheader-two'>Principle Payment Chart</h1>
+      <h1 className='cal-subheader-two'>Principle Payment Chart </h1>
       <Line 
         data={
           principlePaymentChartData
